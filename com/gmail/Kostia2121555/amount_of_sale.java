@@ -3,7 +3,7 @@ package com.gmail.Kostia2121555;
 public class amount_of_sale {
     public static void main(String[] args) {
         int productNumber = 1;
-        String product = "product";
+        String product = "Product";
         String amount = "total";
         String income = "sales";
         int day = 5;
@@ -17,25 +17,24 @@ public class amount_of_sale {
         double average = sum / day;
 
         System.out.println(product + " No " + productNumber + ": smartphone,");
-        System.out.printf(amount + "sales for" + day + " days is EUR " + sum + ",%n");
-        System.out.printf(income + "by day is EUR " + average + ".%n");
+        System.out.printf(amount + " sales for " + day + " days is EUR " + sum + ",%n");
+        System.out.printf(income + " by day is EUR " + average + ".%n");
 
         productNumber = 2;
-        product = "laptop";
         day = 7;
-        double d1 = 1500.00;
-        double d2 = 1499.50;
-        double d3 = 1488.25;
-        double d4 = 1501.75;
-        double d5 = 1490.10;
-        double d6 = 1502.25;
-        double d7 = 1504.00;
+        double d1 = 1498.00;
+        double d2 = 1497.90;
+        double d3 = 1498.20;
+        double d4 = 1498.10;
+        double d5 = 1498.25;
+        double d6 = 1498.15;
+        double d7 = 1498.25;
 
         sum = d1 + d2 + d3 + d4 + d5 + d6 + d7;
         average = sum / day;
 
-        System.out.println(product + " No " + productNumber + ": smartphone,");
-        System.out.printf(amount + "sales for" + day + " days is EUR " + sum + ",%n");
-        System.out.printf(income + "by day is EUR " + average + ".");
+        System.out.println(product + " No " + productNumber + ": laptop,");
+        System.out.printf(amount + " sales for " + day + " days is EUR " + sum + ",%n");
+        System.out.printf(income + " by day is EUR " + average + ".");
     }
 }
