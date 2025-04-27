@@ -7,34 +7,35 @@ public class amount_of_sale {
         String amount = "total";
         String income = "sales";
         int day = 5;
-        double day1 = 2400.25;
-        double day2 = 2500.30;
-        double day3 = 2399.85;
-        double day4 = 2451.60;
-        double day5 = 2401.41;
+        double dayprofit1 = 2400.25;
+        double dayprofit2 = 2500.30;
+        double dayprofit3 = 2399.85;
+        double dayprofit4 = 2451.60;
+        double dayprofit5 = 2401.41;
 
-        double sum = day1 + day2 + day3 + day4 + day5;
+        double sum = dayprofit1 + dayprofit2 + dayprofit3 + dayprofit4 + dayprofit5;
         double average = sum / day;
 
         System.out.println(product + " No " + productNumber + ": smartphone,");
-        System.out.printf(amount + " sales for " + day + " days is EUR " + sum + ",%n");
-        System.out.printf(income + " by day is EUR " + average + ".%n");
+        System.out.printf(amount + " sales for " + day + " days is EUR %.2f,%n", sum);
+        System.out.printf(income + " by day is EUR %.2f.%n", average);
 
         productNumber = 2;
         day = 7;
-        double d1 = 1498.00;
-        double d2 = 1497.90;
-        double d3 = 1498.20;
-        double d4 = 1498.10;
-        double d5 = 1498.25;
-        double d6 = 1498.15;
-        double d7 = 1498.25;
+        dayprofit1 = 1498.00;
+        dayprofit2 = 1497.90;
+        dayprofit3 = 1498.20;
+        dayprofit4 = 1498.10;
+        dayprofit5 = 1498.25;
+        double dayprofit6 = 1498.15;
+        double dayprofit7 = 1498.25;
 
-        sum = d1 + d2 + d3 + d4 + d5 + d6 + d7;
+        sum = dayprofit1 + dayprofit2 + dayprofit3 + dayprofit4 + dayprofit5 + dayprofit6 + dayprofit7;
         average = sum / day;
 
         System.out.println(product + " No " + productNumber + ": laptop,");
-        System.out.printf(amount + " sales for " + day + " days is EUR " + sum + ",%n");
-        System.out.printf(income + " by day is EUR " + average + ".");
+        System.out.printf(amount + " sales for " + day + " days is EUR %.2f,%n", sum);
+        System.out.printf(income + " by day is EUR %.2f.%n", average);
     }
 }
+
