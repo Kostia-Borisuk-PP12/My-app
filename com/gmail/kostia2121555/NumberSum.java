@@ -52,11 +52,13 @@ public class NumberSum {
     public static void printWithDoWhile(int number) {
         int sum = 0;
         int i = 1;
-        do {
-            sum += i;
-            System.out.println(i + ") Num is " + i + ", sum is " + sum);
-            i++;
-        } while (i <= number);
+        if (number > 0) {
+            do {
+                sum += i;
+                System.out.println(i + ") Num is " + i + ", sum is " + sum);
+                i++;
+            } while (i <= number);
+        }
         System.out.println("------------------------");
         System.out.println("Sum of numbers is " + sum);
     }
