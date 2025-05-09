@@ -9,95 +9,87 @@ public class ArrayWork {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        System.out.print("Введіть розмір масиву: ");
+        System.out.print("Enter array size: ");
         int size = scanner.nextInt();
         int[] array = new int[size];
 
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(201) - 100;
         }
-        System.out.print("Елементи масиву:");
-        for (int num : array) {
-            System.out.print(num + " ");
-        }
-        System.out.println("\nЩо ви хочете побачити?");
-        System.out.println("1 - Сума всіх від'ємних чисел");
-        System.out.println("2 - Кількість парних і непарних чисел");
-        System.out.println("3 - Найбільший та найменший елементи та їхні індекси");
-        System.out.println("4 - Середнє арифметичне чисел після першого від'ємного");
-        System.out.print("Введіть номер завдання: ");
-        int choice = scanner.nextInt();
 
+        System.out.print("Array elements: ");
+        for (int number : array) {
+            System.out.print(number + " ");
+        }
+        System.out.println("\nWhat do you want to see?");
+        System.out.println("1 - Sum of all negative numbers");
+        System.out.println("2 - Number of even and odd numbers");
+        System.out.println("3 - Maximum and minimum elements and their indices");
+        System.out.println("4 - Arithmetic mean of numbers after the first negative");
+        System.out.print("Enter task number: ");
+        int choice = scanner.nextInt();
 
         if (choice == 1) {
             int negativeSum = 0;
-            for (int num : array) {
-                if (num < 0) {
-                    negativeSum += num;
+            for (int number : array) {
+                if (number < 0) {
+                    negativeSum += number;
                 }
             }
-            System.out.println("Сума всіх від'ємних чисел: " + negativeSum);
+            System.out.println("Sum of all negative numbers: " + negativeSum);
         }
-
-
         else if (choice == 2) {
-            int evenNum = 0;
-            int oddNum = 0;
-            for (int num : array) {
-                if (num % 2 == 0) {
-                    evenNum++;
-                } else {
-                    oddNum++;
+            int evenCount = 0;
+            for (int number : array) {
+                if (number % 2 == 0) {
+                    evenCount++;
                 }
             }
-            System.out.println("Кількість парних чисел: " + evenNum);
-            System.out.println("Кількість непарних чисел: " + oddNum);
+            int oddCount = array.length - evenCount;
+            System.out.println("Number of even numbers: " + evenCount);
+            System.out.println("Number of odd numbers: " + oddCount);
         }
-
-
         else if (choice == 3) {
-            int maxNum = 0;
-            int minNum = 0;
+            int maxIndex = 0;
+            int minIndex = 0;
             for (int i = 1; i < array.length; i++) {
-                if (array[i] > array[maxNum]) {
-                    maxNum = i;
+                if (array[i] > array[maxIndex]) {
+                    maxIndex = i;
                 }
-                if (array[i] < array[minNum]) {
-                    minNum = i;
+                if (array[i] < array[minIndex]) {
+                    minIndex = i;
                 }
             }
-            System.out.println("Найбільший елемент: " + array[maxNum] + ", індекс: " + maxNum);
-            System.out.println("Найменший елемент: " + array[minNum] + ", індекс: " + minNum);
+            System.out.println("Maximum element: " + array[maxIndex] + ", index: " + maxIndex);
+            System.out.println("Minimum element: " + array[minIndex] + ", index: " + minIndex);
         }
-
-
         else if (choice == 4) {
-            int firstNegativeNum = -1;
+            int firstNegativeIndex = -1;
             for (int i = 0; i < array.length; i++) {
                 if (array[i] < 0) {
-                    firstNegativeNum = i;
+                    firstNegativeIndex = i;
                     break;
                 }
             }
 
-            if (firstNegativeNum == -1 || firstNegativeNum == array.length - 1) {
-                System.out.println("Немає від'ємних чисел або після першого від'ємного немає елементів.");
+            if (firstNegativeIndex == -1 || firstNegativeIndex == array.length - 1) {
+                System.out.println("No negative numbers or no elements after the first negative.");
             } else {
                 int sum = 0;
-                int count = 0;
-                for (int i = firstNegativeNum + 1; i < array.length; i++) {
+                int elementsCount = array.length - (firstNegativeIndex + 1);
+                for (int i = firstNegativeIndex + 1; i < array.length; i++) {
                     sum += array[i];
-                    count++;
                 }
-                double average = (double) sum / count;
-                System.out.println("Середнє арифметичне чисел після першого від'ємного: " + average);
+                double average = (double) sum / elementsCount;
+                System.out.println("Arithmetic mean of numbers after the first negative: " + average);
             }
         }
         else {
-            System.out.println("Невірний вибір.");
+            System.out.println("Invalid choice.");
         }
 
         scanner.close();
     }
 }
+
 
